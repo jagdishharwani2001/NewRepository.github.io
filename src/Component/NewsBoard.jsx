@@ -6,7 +6,7 @@ const NewsBoard = ({category}) => {
 
     const fetchData = async () => {
         try {
-            let response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=519a591893eb400eb824fe393740d9af`);
+            let response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
